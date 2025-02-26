@@ -1,0 +1,43 @@
+
+
+{
+    "project_types" :[
+        {"type":"Web Appliation","tech_requirement" : ["frontend", "backend", "database"], "icon" : "webapp.svg"},
+        {"type":"Portfolio","tech_requirement" : ["frontend"], "icon" : "portfolio.svg"},
+        {"type":"UI/UX Development","tech_requirement" : [], "icon" : "ui_ux.svg"},
+        {"type":"Testing & Automation","tech_requirement" : ["testing-type","frontend"], "icon" : "testing.svg"},
+        {"type":"FrontEnd Development","tech_requirement" : ["frontend"], "icon" : "front-end.svg"},
+        {"type":"BackEnd Development","tech_requirement" : ["backend","database"], "icon" : "back-end.svg"},
+        {"type":"Web Hosting","tech_requirement" : [], "icon" : "web-host.svg"},
+        {"type":"Bug Fixes","tech_requirement" : ["bugfix-type"], "icon" : "bugfix.svg"} 
+    ], 
+    "tech_languages" : [
+        {"lang" : "Angular", "desc": "Angular is a TypeScript-based framework for building scalable web applications. It provides a modular approach with powerful tools like RxJS and dependency injection.", "ext_link" : "https://angular.dev/overview", "icon_class" : "devicon-angularjs-plain"},
+        {"lang" : "React", "desc": "React - A JavaScript library for building fast and interactive user interfaces with a component-based architecture.", "ext_link" : "https://react.dev/learn" , "icon_class" :  "devicon-react-original-wordmark"},
+        {"lang" : "Ember", "desc": "Ember - A powerful JavaScript framework for building scalable single-page applications with convention-over-configuration principles.", "ext_link" : "https://guides.emberjs.com/release/tutorial/part-1/","icon_class" : "devicon-ember-original-wordmark"},
+        {"lang" : "Java", "desc": "Java - A versatile, object-oriented programming language widely used for enterprise applications, web development, and Android apps.", "ext_link" : "https://www.javatpoint.com/java-tutorial", "icon_class" : "devicon-java-plain-wordmark"},
+        {"lang" : ".Net", "desc": ".NET - A robust framework by Microsoft for developing web, desktop, and cloud applications with high performance and security.", "ext_link" : "https://learn.microsoft.com/en-us/dotnet/", "icon_class" : "devicon-dotnetcore-plain"},
+        {"lang" : "C#", "desc": "C# - A modern, object-oriented programming language developed by Microsoft, commonly used for Windows applications, game development, and enterprise software.", "ext_link" : "https://www.w3schools.com/cs/index.php", "icon_class" : "devicon-csharp-plain-wordmark"},
+        {"lang" : "Figma", "desc": "Figma - Figma is a collaborative design tool that helps users create, share, and test designs for digital products. It's used by designers, product managers, writers, and developers. ", "ext_link" : "https://help.figma.com/hc/en-us/categories/360002051613-Get-started", "icon_class" : "devicon-figma-plain"},
+        {"lang" : "Selenium", "desc": "Selenium - Selenium is one of the most widely used open source Web UI (User Interface) automation testing suite.It was originally developed by Jason Huggins in 2004 as an internal tool at Thought Works.", "ext_link" : "https://www.javatpoint.com/selenium-tutorial", "icon_class" : "devicon-selenium-original"},
+        {"lang" : "HTML", "desc": "HTML - The standard markup language for creating web pages, defining structure, and content on the web.", "ext_link" : "https://www.w3schools.com/html/html_intro.asp", "icon_class" : "devicon-html5-plain-wordmark"},
+        {"lang" : "CSS", "desc": "CSS - A styling language used to design web pages by controlling layout, colors, fonts, and responsiveness.", "ext_link" : "https://www.w3schools.com/css/", "icon_class" : "devicon-css3-plain-wordmark"},
+        {"lang" : "JavaScript", "desc": "JavaScript - A dynamic programming language that enables interactive web elements, animations, and advanced client-side functionalities.", "ext_link" : "https://www.w3schools.com/js/", "icon_class" : "devicon-javascript-plain"},
+        {"lang" : "PostgreSQL", "desc": "PostgreSQL - A powerful, open-source relational database system known for its extensibility, reliability, and advanced features.", "ext_link" : "https://www.javatpoint.com/postgresql-tutorial", "icon_class" : "devicon-postgresql-plain-wordmark"},
+        {"lang" : "MySQL", "desc": "MySQL - A widely used relational database management system known for its speed, scalability, and ease of use.", "ext_link" : "https://www.javatpoint.com/mysql-tutorial", "icon_class" : "devicon-mysql-plain-wordmark"}
+    ],
+    "process_timeline" : [
+        {"title" : "Discovery", "desc" : "Understanding your business needs and goals to craft a perfect strategy." ,"icon_class" : "fa-lightbulb"},
+        {"title" : "Design", "desc" : "Wireframing and UI/UX design to create a user-friendly experience.", "icon_class" : "fa-paintbrush"},
+        {"title" : "Development", "desc" : "Turning ideas into a functional and dynamic web solution." , "icon_class" : "fa-laptop-code"},
+        {"title" : "Testing", "desc" : "Debugging, optimizing, and ensuring top-notch performance." , "icon_class" : "fa-magnifying-glass"},
+        {"title" : "Launch & Maintenance", "desc" : "Deploying your website and providing ongoing support & updates." , "icon_class" : "fa-rocket"}
+    ],
+    "code_challenges" : [
+        {"title" : "LeetCode", "ext_link" : "https://leetcode.com/problems/two-sum/"},
+        {"title" : "HackerRank", "ext_link" : "https://www.hackerrank.com/dashboard"},
+        {"title" : "GeeksforGeeks", "ext_link" : "https://www.geeksforgeeks.org/problem-of-the-day"},
+        {"title" : "Codeforces", "ext_link" : "https://codeforces.com/problemset"},
+        {"title" : "CodePen", "ext_link" : "https://codepen.io/challenges"}
+    ]
+}

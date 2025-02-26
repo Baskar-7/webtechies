@@ -1,0 +1,13 @@
+<!-- <p>dropdown works!</p> -->
+
+
+<div class="{{label}}_list dropdown">
+    <div class="select" (click)="toggleDropdown(label,'open')" tabindex="0" (focusout) ="toggleDropdown(label,'open')" >
+        <span class="{{label}}_selected_category">Select</span>
+        <i class="fa-solid fa-caret-down"></i>
+    </div>
+    <ul class="dropdown-menu scroll-bar" (click)="selectOption($event)" > 
+        <li *ngFor="let datum of data" [attr.id]="datum">{{datum}}</li>
+    </ul>
+</div>  
+

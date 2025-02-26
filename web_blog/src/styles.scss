@@ -1,0 +1,219 @@
+/* You can add global styles to this file, and also import other style files */
+
+ul{
+  list-style-type: none; 
+  padding-left: 0px;
+  overflow: auto;
+  margin-top: 0px;
+  li{
+    padding: 10px;
+  }
+}
+a{
+  all: unset;
+}
+
+i{
+  margin: 5px;
+}
+
+//Drop-down box
+.dropdown {
+    width: 300px;
+    display: inline-block;
+    border-radius: 2px;
+    box-shadow: 0 0 2px rgb(204, 204, 204);
+    transition: all .5s ease;
+    position: relative;
+    font-size: 14px;
+    color: #474747;
+    // height: 100%;
+    text-align: left
+  }
+  .dropdown .select {
+      cursor: pointer;
+      display: block;
+      padding: 10px;
+      // width: 100%; 
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        max-width: 90%;
+      }
+      i{
+        margin: 0px;
+      }
+  }
+  .dropdown .select > i {
+      font-size: 13px;
+      color: #3c3b3b;
+      cursor: pointer;
+      transition: all .3s ease-in-out;
+      float: right;
+      line-height: 20px
+  }
+  .dropdown:hover {
+      box-shadow: 0 0 4px rgb(204, 204, 204)
+  }
+  
+  .dropdown.active .select > i {
+      transform: rotate(-90deg)
+  }
+  
+  .dropdown .dropdown-menu {
+      position: absolute;
+      background-color: rgba(230, 251, 248, 0.596); 
+      width: 100%;
+      left: 0;
+      margin-top: 1px;
+      box-shadow: 0 1px 2px rgb(204, 204, 204);
+      border-radius: 0 1px 2px 2px;
+      overflow: hidden;
+      display: none;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 9;
+      padding: 0;
+      list-style: none; 
+  }
+  
+  .dropdown .dropdown-menu li {
+      padding: 10px;
+      transition: all .2s ease-in-out;
+      cursor: pointer
+  } 
+  .dropdown .dropdown-menu li:hover {
+    background-color: rgba(139, 235, 228, 0.14);
+  }
+  .dropdown .dropdown-menu li:active {
+    background-color: rgba(69, 190, 182, 0.399);
+  }
+
+  @keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}  
+ 
+@keyframes btn-bubble {
+  0%{scale: 1;}
+  80%{scale: 1.6;}
+  100%{scale: 1.2;}
+}
+
+@keyframes bounce {
+  0% { transform: translateY(-60px)  scaleY(1) scaleX(1); opacity: 0;}
+  20% { transform: translateY(0px) ; opacity: 1;}
+  25%{transform: translateY(0px) scaleY(1.10) scaleX(0.90);}
+  50% { transform: translateY(-25px) scaleY(1) scaleX(1); }
+  90% { transform: scaleY(1) scaleX(0.98); }
+  100% { transform: translateY(0px) scaleY(1) scaleX(1); opacity: 1;}
+}
+
+.inputBox-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (min-width: 158px) 
+  {
+    .inputBox-container { 
+      margin-bottom: 30px;
+    }
+    .inputBox-container .inputBox {
+      width: calc(50% - 8px);
+    }
+    .inputBox-container input,.inputBox input#validated.ng-dirty,.inputBox textarea{
+      max-width: 500px;
+      width: calc(100% - 12px);
+      border-radius: 3px;
+      height: 25px;
+    } 
+}
+
+//Scroll-bar 
+.scroll-bar {
+	&::-webkit-scrollbar {
+		width: 5px;
+	}
+	&::-webkit-scrollbar:horizontal {
+		height: 6px;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: transparentize(#e5e3e3, 0.7);
+	}
+	&::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		background: transparentize(#d7d6d6, 0.5);
+		box-shadow: inset 0 0 6px rgba(199, 196, 196, 0.5); 
+	}
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Edge, Safari */
+}
+
+.confirm-btn-green
+{
+  background-color:#04AA6D ;
+  border: 1px solid #04AA6D;
+}
+.confirm-btn-red{
+  background-color: RGB(248, 68, 100);
+  border: 1px solid RGB(248, 68, 100);
+}
+
+.confirm-btn-black{
+  background-color:#000;
+  border: 1px solid #000;
+}
+
+//button
+button{
+  padding: 10px 20px;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.invalid-feedback{
+  position: relative;
+   color: #f31717;
+   span{
+     position: absolute;
+     padding-left: 5px;
+   }
+ }
+
+.btn-block{
+  display: flex;
+  justify-content: center;
+  .confirm-btn-green {
+    margin:0px 20px;
+    padding:10px 35px;
+  }
+}
+ 
+.no-lenis-scroll {
+  overflow: auto; 
+}
+
+.section-wrapper {
+  position: relative;
+}
+
+.spacer {
+  height: 50vh; /* Adjust as needed */
+  background: transparent;
+}

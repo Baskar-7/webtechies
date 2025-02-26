@@ -1,0 +1,213 @@
+<!-- Home page of the blog -->
+<app-loader [(isLoading)]="isLoading" ></app-loader>
+<app-msg-box [statusMessage]="statusMessage" ></app-msg-box>
+<main class="wrapper">
+
+    <div class="container container_one" id="home_container" >
+        <section class="title_div"> 
+            <div class="division"> 
+                <h1 class="title_label">WEB TECHIES</h1>
+                <span style=" color: #000000; font-size: 14px;">Transform Your Ideas into Stunning Websites</span>
+            </div>
+        </section>
+        <section>
+            <div class="division"> 
+                <h2>Foundation of Our Web Solutions: </h2>
+                <div class="tech-stack"> 
+                    <span class="tech-icon-bg sq-bg box" *ngFor="let tech of techs" >
+                        <i class="{{tech.icon_class}}"></i>
+                        <p class="tech-description">{{tech.desc}}</p>
+                        <button><a href="{{tech.ext_link}}" target="_blank" >Learn more.</a></button>
+                    </span>  
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="division">
+                <h2>What we Offers:</h2>
+                <div class="tech-stack"> 
+                    <span class="tech-icon-bg cyl-bg" *ngFor="let project_type of project_types">
+                        <img src="assets/logo/{{project_type.icon}}" alt="{{project_type.type}}"> 
+                        <span>{{project_type.type}}</span>
+                    </span>  
+                </div>
+            </div>
+            <div class="division">
+                <a class="circle-btn bounce-animation-btn" (click)="scrollToSection('contact-form')">
+                    <label class="btn-label" >Let's <br> Build Your<br>Ideas  </label>
+                    <div class="btn-circle-ring" ></div>
+                </a> 
+            </div>
+        </section>
+    </div> 
+     
+    <div class="container container_two" id="container-two">
+        <div class="container-wrapper"></div>
+        <section>
+            <div class="division"> 
+                <div class="process-container" style="color: #fff;">
+                    <h2 class="section-title">Our Process: From Idea to Launch </h2>
+                    <div class="timeline"> 
+                        <div class="timeline-item" *ngFor="let timeline of process_timeline">
+                            <div class="timeline-icon"><i class="fa-solid {{timeline.icon_class}}"></i></div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-title">{{timeline.title}}</h3>
+                                <p class="timeline-description">{{timeline.desc}}</p>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <div class="division hanging-board"> 
+                <h2 class="section-title">Unleash your Coding knowledge</h2><br> 
+                <div class="board-container" *ngFor="let tech_page of code_challenges">  
+                    <!-- <div class="rope"></div> -->
+                    <div class="boards">
+                        <div class="board"><a href="{{tech_page.ext_link}}" target="_blank">{{tech_page.title}} Challenges<i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+                        <div class="board"><span>{{tech_page.title}}</span></div>
+                    </div> 
+                </div> 
+            </div>
+        </section>  
+        </div> 
+    <div class="container container_three">
+        <div class="flip-based-container">
+        <section class="box" data-aos="flip-right">
+            <div class="division box1 top" >
+                <div class="div_container contact-form">
+                    <form id="contact-form" [formGroup]="contact_form" ngSubmit="sendMail()">
+                        <h2 class="section-title">ENQUIRY</h2>
+                        <div class="scroll-bar input-container no-lenis-scroll">
+                            <div class="inputBox-container"> 
+                                <div class="inputBox">
+                                    <label>Full Name</label>
+                                    <input type="text" formControlName="name" autocomplete="off" /> 
+                                    <div *ngIf="contact_form.get('name')?.invalid && (contact_form.get('name')?.dirty || contact_form.get('name')?.touched)" class="invalid-feedback">
+                                        <span *ngIf="contact_form.get('name')?.errors?.['required']">Name is required.</span>
+                                    </div>
+                                </div> 
+                                <div class="inputBox">
+                                    <label>Mobile</label>
+                                    <input type="number" formControlName="mobile" id="phone" autocomplete="off" />     
+                                    <div *ngIf="contact_form.get('mobile')?.invalid && (contact_form.get('mobile')?.dirty || contact_form.get('mobile')?.touched)" class="invalid-feedback">
+                                        <span *ngIf="contact_form.get('mobile')?.errors?.['required']">Mobile is required.</span>
+                                        <span *ngIf="contact_form.get('mobile')?.errors?.['pattern']">Mobile number must be 10 digits.</span>
+                                    </div>                       
+                                </div>
+                            </div>
+                            
+                            <div class="inputBox-container">
+                                <div class="inputBox">
+                                    <label>Email</label>
+                                    <input type="email" formControlName="mail"  autocomplete="off" >       
+                                    <div *ngIf="contact_form.get('mail')?.invalid && (contact_form.get('mail')?.dirty || contact_form.get('mail')?.touched)" class="invalid-feedback">
+                                        <span *ngIf="contact_form.get('mail')?.errors?.['required']">Mail is required.</span>
+                                        <span *ngIf="contact_form.get('mail')?.errors?.['email']">Enter a valid Email Address</span>
+                                    </div>                    
+                                </div>  
+                                <div class="inputBox">
+                                    <label>Brief about the project </label>
+                                    <textarea type="textarea" formControlName="project_detail" autocomplete="off" ></textarea>
+                                     <div *ngIf="contact_form.get('project_detail')?.invalid && (contact_form.get('project_detail')?.dirty || contact_form.get('project_detail')?.touched)" class="invalid-feedback">
+                                        <span *ngIf="contact_form.get('project_detail')?.errors?.['required']">Project Detail is required.</span>
+                                    </div>
+                                </div>  
+                            </div>
+
+                            <div class="inputBox-container">  
+                                <div class="inputBox">
+                                    <label>Project Type </label>
+                                    <app-dropdown [label]="'project-type'" [data]="getProjectTypes(project_types)" (handleActions)="this.handleActions($event)"></app-dropdown>
+                                    <div *ngIf="contact_form.get('project_type')?.invalid && (contact_form.get('project_type')?.dirty || contact_form.get('project_type')?.touched)" class="invalid-feedback">
+                                        <span *ngIf="contact_form.get('project_type')?.errors?.['required']">Project Type is required.</span>
+                                    </div>
+                                </div>
+                            </div>  
+
+                            <div class="inputBox-container" *ngIf="isRequiredControlField('backend')">  
+                                <div class="inputBox">
+                                        <label>Backend Language (optional)</label>
+                                        <app-dropdown [label]="'backend'" [data]="['Java','.Net','.C#']" (handleActions)="this.handleActions($event)"></app-dropdown> 
+                                </div>
+                                <div class="inputBox">
+                                    <label>Database (optional)</label>
+                                    <app-dropdown [label]="'database'" [data]="['Postgres','Mysql']" (handleActions)="this.handleActions($event)"></app-dropdown> 
+                                </div>
+                            </div>
+
+                            <div class="inputBox-container" *ngIf="isRequiredControlField('frontend')">  
+                                <div class="inputBox">
+                                    <label>FrontEnd Language (optional)</label>
+                                    <app-dropdown [label]="'frontend'" [data]="['Angular','React','Ember','HTML']" (handleActions)="this.handleActions($event)"></app-dropdown> 
+                                </div> 
+                                <div class="inputBox" *ngIf="isRequiredControlField('testing-type')">
+                                    <label>Testing Type (optional)</label>
+                                    <app-dropdown [label]="'testing-type'" [data]="['Manual','Automation']" (handleActions)="this.handleActions($event)"></app-dropdown> 
+                                </div>
+                            </div> 
+
+                            <div class="inputBox-container" *ngIf="isRequiredControlField('bugfix-type')">  
+                                <div class="inputBox">
+                                    <label>Bug Fixes - Type (optional)</label>
+                                    <app-dropdown [label]="'bugfix-type'" [data]="['Manual','Automation']" (handleActions)="this.handleActions($event)"></app-dropdown> 
+                                </div> 
+                            </div>  
+                        </div>
+                        <div class="btn-block">
+                            <button class="confirm-btn-black" type="submit" (click)="sendMail()" style="width: 100%;">Send</button> 
+                        </div>
+                    </form>
+                </div> 
+            </div>
+            <div class="division box2" >
+                <div class="div_container address box2" style="margin-right: 10px;background-color:#fbffcf;">
+                  <h2 class="section-title"> CONTACT INFO</h2>
+                  <ul>
+                    <li><i class="fa-regular fa-paper-plane"></i>baskar97917&#64;gmail.com</li>
+                    <li><i class="fa-solid fa-house"></i>14D, Dhanakotti ammal 1st street, Valli ammal nagar, Vanagaram, Chennai - 95</li>
+                  </ul>
+                </div>
+                <div class="div_container box2" style="background-color: #ffeccf;">
+                    <h2 class="section-title"> FOLLOW US ON</h2>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/baskar__.__7/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/baskar-e-bb487a217/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div> 
+            </div>
+        </section>
+        <section class="box" data-aos="flip-right">
+            <div class="div_container about-us box1 top" style="background-color:#abadde;">
+                <h2 class="section-title">ABOUT US</h2>
+                <div class="scroll-bar">
+                    <p> <b>W</b>e are a passionate team of developers, designers, and testers who came together to create innovative web solutions.
+                        What started as a group of friends with a shared vision has grown into a dynamic startup delivering top-notch web development, UI/UX design, and testing services.
+                    </p>
+                    <p>With a strong focus on creativity, performance, and user experience, we help businesses build stunning digital experiences. From concept to launch, we bring ideas to life with precision and innovation.</p>
+                    <p>Join us on this journey as we turn visions into reality! </p>
+                </div>
+            </div>
+            <div class="div_container box2 fun-facts scroll-bar" style="background-color:#ffd2cf;" > 
+                <h2 class="section-title">FUN FACTS</h2>  
+                <p #fact class="fact-container"> 
+                </p> 
+                <button class="confirm-btn-black" (click)="getFunFact()">Surprise Me!</button>
+            </div>
+        </section>
+        </div>
+        <section class="box navigation-block" data-aos="flip-right">
+            <div class="div_container back-to-top box2 top" style="background-color:#bded39;" (mouseenter)="playAnimation()" (click)="scrollToSection('home_container')">
+                <span>BACK TO TOP</span>
+                <div class="lottie-container"  style="width: 150px;">
+                    <div #lottieContainer></div>
+                  </div>
+            </div>
+            <div class="div_container locate-us box1">
+                <div #gmap id="gmap" style="height: 100%;width: 100%;border-radius: 10px;">
+                </div>
+            </div>
+        </section>
+    </div> 
+</main>
