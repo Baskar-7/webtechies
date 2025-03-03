@@ -123,7 +123,7 @@ export class IndexComponent implements AfterViewInit{
           scrollTrigger: {
             trigger: section,
             scrub: 1.5, 
-            start : "bottom 20%", 
+            start : "bottom center", 
             pin: true, 
             pinSpacing: true, 
             anticipatePin: 1,  
