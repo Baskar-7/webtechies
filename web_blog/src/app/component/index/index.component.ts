@@ -104,14 +104,14 @@ export class IndexComponent implements AfterViewInit{
     this.animateContainer();
   } 
 
-  @HostListener('wheel', ['$event'])
-  @HostListener('touchmove', ['$event'])
-  preventLenisOnScroll(event: Event) {
-    const target = event.target as HTMLElement;
-    if (target.closest('.no-lenis-scroll')) {
-      event.stopPropagation(); 
-    }
-  }
+  // @HostListener('wheel', ['$event'])
+  // @HostListener('touchmove', ['$event'])
+  // preventLenisOnScroll(event: Event) {
+  //   const target = event.target as HTMLElement;
+  //   if (target.closest('.no-lenis-scroll')) {
+  //     event.stopPropagation(); 
+  //   }
+  // }
 
   ngOnDestroy() {
     if (this.lenis) {

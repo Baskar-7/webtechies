@@ -1,3 +1,13 @@
+
+html, body {
+    user-select: none; /* Prevents text selection */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE/Edge */
+    touch-action: manipulation; /* Prevents accidental zooming and selection */
+  }
+  
+
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great');
 .wrapper{
     background-color: #010302;  
