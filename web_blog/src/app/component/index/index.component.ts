@@ -124,7 +124,7 @@ export class IndexComponent implements AfterViewInit{
             trigger: section,
             scrub: 1.5, 
             start : "bottom center", 
-            pin: window.innerWidth > 768 ? true : false, 
+            pin: true,
             pinSpacing: false,
           }
         })
