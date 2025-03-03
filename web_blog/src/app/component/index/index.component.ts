@@ -68,27 +68,7 @@ export class IndexComponent implements AfterViewInit{
       duration: 1.2,
       easing: (t) => 1 - Math.pow(1 - t, 3),  
     });
- 
-  // document.addEventListener(
-  //   'touchstart',
-  //   (e) => {
-  //     if (e.targetTouches.length === 1) {
-  //       e.preventDefault(); // Allow preventDefault
-  //     }
-  //   },
-  //   { passive: false }
-  // );
 
-  // document.addEventListener(
-  //   'touchmove',
-  //   (e) => {
-  //     if (e.targetTouches.length === 1) {
-  //       e.preventDefault(); // Allow preventDefault
-  //     }
-  //   },
-  //   { passive: false }
-  // );
-     
     var self = this;
     function raf(time: number) {
       self.lenis.raf(time);
@@ -142,9 +122,9 @@ export class IndexComponent implements AfterViewInit{
           y: 50,  
           scrollTrigger: {
             trigger: section,
-            scrub: true, 
+            scrub: 1.5, 
             start : "bottom center", 
-            pin: true,
+            pin: window.innerWidth > 768 ? true : false, 
             pinSpacing: false,
           }
         })
