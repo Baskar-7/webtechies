@@ -553,7 +553,12 @@
         font-size: 12px;
         .container
         {
-            .title_div{padding: 10px;}
+            .title_div{
+                padding: 10px;                
+                .title_label{ 
+                    font-family: Charcoal, fantasy;
+                    }
+            }
             .container-wrapper{display: none;}
             section
             {
