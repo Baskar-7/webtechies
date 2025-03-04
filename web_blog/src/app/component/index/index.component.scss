@@ -1,11 +1,12 @@
 
-html, body {
+* {
+    -webkit-tap-highlight-color: transparent;
     user-select: none; /* Prevents text selection */
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE/Edge */
     touch-action: manipulation; /* Prevents accidental zooming and selection */
-  } 
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great');
 .wrapper{
@@ -577,19 +578,24 @@ html, body {
                     .tech-stack 
                     {
                         justify-content: center;
-                        .tech-icon-bg{padding: 10px; }
+                        .tech-icon-bg{padding: 10px;overflow: hidden;}
                         .tech-icon-bg.sq-bg { 
                             font-size: 40px;   
                             width: 50px;
-                            height: 50px;
-                            &:hover{  
-                                scale: 3;
-                                font-size: 10px;
-                                padding: 10px;
-                                i{margin: 0px;}
-                                .tech-description{margin: 0px 3px;font-size: 5px;}
-                                button{font-size: 4px;}
-                            } 
+                            height: 50px; 
+                            &:hover{
+                                scale: 1; background-color: #a5c9e96b;color: rebeccapurple;
+                            }
+                        }
+                        .tech-icon-bg.sq-bg.active{
+                            scale: 3;
+                            color: #000; 
+                            background-color: #6868b1;
+                            font-size: 10px;
+                            padding: 10px;
+                            i{margin: 0px;}
+                            .tech-description{margin: 0px 3px;font-size: 5px;}
+                            button{font-size: 4px;}
                         }
                         .tech-icon-bg.cyl-bg {  
                             width: 130px;  

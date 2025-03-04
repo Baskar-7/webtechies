@@ -123,7 +123,7 @@ export class IndexComponent implements AfterViewInit{
           scrollTrigger: {
             trigger: section,
             scrub: 1.5, 
-            start : "bottom 25%", 
+            start : "bottom center", 
             pin: true, // Keeps the section pinned
             pinSpacing: true, // Allows smooth spacing adjustments
             anticipatePin: 1, // Reduces stuttering during pinning
@@ -300,5 +300,15 @@ export class IndexComponent implements AfterViewInit{
       </html>
     `;
   } 
- 
+
+  handleTechClick(event: Event) {
+    const targetElement = event.target as HTMLElement;
+    const parentElement = targetElement.closest('.sq-bg'); 
+    
+    if (parentElement) {
+      parentElement.classList.toggle('active'); 
+    }
+  }
+  
 }
+
