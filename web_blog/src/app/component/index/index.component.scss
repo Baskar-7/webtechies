@@ -605,9 +605,9 @@
                     }
                     .section-title {font-size: 18px;}
                     .process-container{
-                        font-size: 12px;
+                        font-size: 10px;
                         margin: 0px 20px; 
-                        .timeline{margin: unset; .timeline-item{.timeline-content{ .timeline-title,.timeline-description{color: #fff;}.timeline-title{color: #f6f696;}}}}
+                        .timeline{margin: unset; .timeline-item{.timeline-content{.timeline-description{font-size: 10px;} .timeline-title,.timeline-description{color: #fff;}.timeline-title{color: #f6f696;}}}}
                     }
                 }
                 .division.hanging-board{display: none;} //.board-container{.boards{display: flex;justify-content: center;.board{width: 150px;height: 30px;font-size: 12px; }}}
