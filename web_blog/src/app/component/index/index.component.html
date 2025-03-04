@@ -193,7 +193,10 @@
                 <h2 class="section-title">FUN FACTS</h2>  
                 <p #fact class="fact-container"> 
                 </p> 
-                <button class="confirm-btn-black" (click)="getFunFact()">Surprise Me!</button>
+                <div style="display: flex;flex-direction: column;align-items: center;">
+                    <button class="confirm-btn-black" (click)="getFunFact()">Surprise Me!</button>
+                    <span style="font-size: 8px;">click to suprise</span>
+                </div>
             </div>
         </section>
         </div>
