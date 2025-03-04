@@ -5,11 +5,11 @@ html, body {
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE/Edge */
     touch-action: manipulation; /* Prevents accidental zooming and selection */
-  }
-  
+  } 
 
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great');
 .wrapper{
+    user-select: none;
     background-color: #010302;  
     color: #fff;  
     width: 100%; 
@@ -635,6 +635,21 @@ html, body {
             }
         }
     } 
+}
+
+@media screen and (max-width: 350px) {
+    .wrapper .container section .division .tech-stack 
+    {
+        .tech-icon-bg.sq-bg{  
+            padding: 6px;
+        }
+        .tech-icon-bg.cyl-bg {  
+                width:35%;  
+                height: 15%;
+                padding: 6px;
+                span{font-size: 8%;}
+            }
+    }
 }
 
 @media screen and (max-width: 481) and (max-width: 1024px){
