@@ -48,7 +48,7 @@ export class IndexComponent implements AfterViewInit{
       project_type : ['',Validators.required], 
       selected_details : this.fb.group({})
     });
-    this.loadLottieAnimation(); 
+    this.loadLottieAnimation();  
   }
 
     //Triggers the Status message to user using msg-box component
@@ -301,12 +301,12 @@ export class IndexComponent implements AfterViewInit{
     `;
   } 
 
-  handleTechClick(event: Event) {
+  handleTechClick(event: Event,option: string) {
     const targetElement = event.target as HTMLElement;
     const parentElement = targetElement.closest('.sq-bg'); 
     
     if (parentElement) {
-      parentElement.classList.toggle('active'); 
+      option === "open" ? parentElement.classList.add("active") : option === "toggle" ? parentElement.classList.toggle('active') : parentElement.classList.remove('active'); 
     }
   }
   
