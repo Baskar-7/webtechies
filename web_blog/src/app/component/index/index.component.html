@@ -17,7 +17,7 @@
                     <span class="tech-icon-bg sq-bg box" (click)="handleTechClick($event)" tabindex="0" (focusout)="handleTechClick($event)" *ngFor="let tech of techs" >
                         <i class="{{tech.icon_class}}"></i>
                         <p class="tech-description">{{tech.desc}}</p>
-                        <button><a href="{{tech.ext_link}}" target="_blank" >Learn more.</a></button>
+                        <button (click)="handleTechClick($event)"><a href="{{tech.ext_link}}" target="_blank" >Learn more.</a></button>
                     </span>  
                 </div>
             </div>

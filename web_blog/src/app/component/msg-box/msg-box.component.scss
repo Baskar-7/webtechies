@@ -34,3 +34,12 @@
   90%  {top:80px;opacity: 1;}
   100% {top:10px;opacity: 0;}
 }
+
+@media screen and (max-width: 480px) {
+    .message-box{
+        width: 200px;  
+        top: 20px; /* Adjust the distance from the top */
+        left: 50%;
+        transform: translate(-50%, 0); /* Ensures it's properly centered */
+    }
+}
