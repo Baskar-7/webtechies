@@ -46,6 +46,7 @@
             background-size: contain;
             font-family: fantasy; 
         }
+        .tagline{color: #000000; font-size: 14px;}
         .division{
             display: inherit;
             flex-direction: inherit;
@@ -567,7 +568,7 @@
             .title_div{
                 padding: 10px;                
                 .title_label{font-size: 2.2rem;font-family: "Fredericka the Great", serif;font-weight: 300;font-style: normal;}
-                span{font-size: 10px;} 
+                .tagline{font-size: 10px;} 
             } 
             .container-wrapper{display: none;}
             section
