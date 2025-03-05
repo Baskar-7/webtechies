@@ -14,10 +14,10 @@
             <div class="division"> 
                 <h2>Foundation of Our Web Solutions: </h2>
                 <div class="tech-stack"> 
-                    <span class="tech-icon-bg sq-bg box" (click)="handleTechClick($event)" tabindex="0" (focusout)="handleTechClick($event)" *ngFor="let tech of techs" >
+                    <span class="tech-icon-bg sq-bg box" (click)="handleTechClick($event,'toggle')" tabindex="0" (focusout)="handleTechClick($event,'remove')" *ngFor="let tech of techs" >
                         <i class="{{tech.icon_class}}"></i>
                         <p class="tech-description">{{tech.desc}}</p>
-                        <button (click)="handleTechClick($event)"><a href="{{tech.ext_link}}" target="_blank" >Learn more.</a></button>
+                        <button (click)="handleTechClick($event,'remove')"><a href="{{tech.ext_link}}" target="_blank" >Learn more.</a></button>
                     </span>  
                 </div>
             </div>
