@@ -39,6 +39,10 @@ export class IndexComponent implements AfterViewInit{
   constructor(private fb: FormBuilder,private cdr:ChangeDetectorRef,private http : HttpClient,private email: EmailService){}
  
   ngOnInit(){
+    if(navigator.userAgent.includes("Instagram"))
+    {
+      window.location.href="googlechrome://webtechies.vercel.app"
+    }
     this.initMap();
     this.contact_form = this.fb.group({
       name : ['',Validators.required],
